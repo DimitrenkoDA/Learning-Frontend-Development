@@ -10,7 +10,7 @@ pad.addEventListener('click', function (event) {
   user.email = a;
   user.password = b;
   console.log(user);
-  var request = fetch('http://hotshot.world/operator/login', {
+  var request = fetch('https://api.app.spectoos.com/login', {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
