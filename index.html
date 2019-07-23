@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="./styles.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+  <title>Sign In</title>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="sidebar">
+      <div class="logo">hotshot logo</div>
+      <div class="rectangle">
+        <div class="error">
+          <div class="error-icon">
+            <img src="images/warning.png" alt="contact-icon">
+          </div>
+          <div class="error-message">
+            <output name="error-code">System error text</output>
+          </div>
+        </div>
+        <div class="reсtangle-header">Sign in</div>
+          <div class="textfield" id="email">
+            <div class="rectangle-email">
+              <div class="email-icon">
+                <img src="images/email.png" alt="contact-icon">
+              </div>
+              <div class="email-insertion">
+                <input type="text" placeholder="Email">
+              </div>
+            </div>
+            <div  id="email-error-text">Error text</div>
+          </div>
+          <div class="textfield" id="password">
+            <div class="rectangle-password">
+              <div class="password-icon">
+                <img src="images/password.png" alt="password-icon">
+              </div>
+              <div class="password-insertion">
+                <input type="password" placeholder="Password">
+              </div>
+            </div>
+            <div id="password-error-text">Error text</div>
+          </div>
+        <div class="rectangle-buttons">
+          <button class="button-sign-in">Sign In</button>
+          <div class="forgot-link" href="#">Forgot password?</div>
+        </div>
+        <div class="rectangle-link">
+          <div class="label">Don't have an account?</div>
+          <div class="sign-up-link">Sign Up</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-icon">
+          <img src="images/support.png" alt="contact-icon">
+        </div>
+        <div class="contact-link">Contact us</div>
+      </div>
+    </div>
+    <div class="main"></div>
+  </div>
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>

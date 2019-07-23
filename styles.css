@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+}
+.sidebar {
+  display: flex;
+  background-color: #ffffff;
+  height: 100%;
+  min-width: 340px;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+}
+
+.main{
+  background-image: url(images/bitmap.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #666666;
+  margin: 80px 0px 0px 100px;
+  display: flex;
+}
+
+.contact {
+  display: flex;
+  margin: 0px 0px 60px 100px;
+  flex-direction: row;
+}
+
+.contact .contact-link {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #666666;
+  font-size: 14px;
+  margin: 0px 0px 0px 20px;
+}
+
+.contact .contact-icon {
+  display: flex;
+}
+
+.rectangle {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  left: 100px;
+  top: 125px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 0px 0px 40px 0px;
+}
+
+.rectangle .error {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #f74236;
+  border-radius: 4px;
+  width: 440px;
+  height: 36px;
+  margin: 20px 20px 20px 20px;
+  display: none;
+}
+
+.error.errored {
+  display: flex;
+}
+
+.error .error-icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0px 0px 0px 10px;
+}
+
+.error .error-message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin: 0px 0px 0px 10px;
+}
+
+.rectangle .reсtangle-header {
+  display: flex;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  color: #373737;
+  width: 320px;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 80px 0px 80px;
+}
+
+.textfield .rectangle-email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 320px;
+  height: 40px;
+  margin: 20px 80px 0px 80px;
+  border: 2px solid #e2e2e2;
+  border-radius: 4px;
+}
+
+.textfield.errored .rectangle-email{
+  border: 2px solid #f74236;
+}
+
+.rectangle-email .email-icon {
+  display: flex;
+  margin: 0px 10px 0px 10px;
+}
+
+.textfield .email-insertion {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.textfield #email-error-text {
+  display: flex;
+  height: 10px;
+  font-size: 12px; 
+  align-items: center;
+  margin: 4px 0px 0px 80px;
+  color: #f74236;
+  font-family: 'Roboto', sans-serif;
+  display: none;
+}
+
+.textfield.errored #email-error-text{
+  display: block;
+}
+
+.textfield .rectangle-password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 320px;
+  height: 40px;
+  margin: 20px 80px 0px 80px;
+  border: 2px solid #e2e2e2;
+  border-radius: 4px;
+}
+
+.textfield.errored .rectangle-password{
+  border: 2px solid #f74236;
+}
+
+.rectangle-password .password-icon {
+  display: flex;
+  margin: 0px 10px 0px 10px;
+}
+
+.rectangle-password .password-insertion {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.textfield #password-error-text {
+  display: flex;
+  height: 10px;
+  font-size: 12px; 
+  align-items: center;
+  margin: 4px 0px 0px 80px;
+  color: #f74236;
+  font-family: 'Roboto', sans-serif;
+  display: none;
+}
+
+.textfield.errored #password-error-text{
+  display: block;
+}
+
+.rectangle-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 320px;
+  justify-content: space-between;
+  margin: 20px 80px 0px 80px;
+}
+
+.rectangle-buttons .button-sign-in {
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  background-color: #535bfe;
+  border: 0;
+  padding: 0;
+}
+
+.rectangle-buttons .forgot-link {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 40px;
+  text-decoration: underline;
+  font-family: 'Roboto', sans-serif;
+  color: #535bfe;
+  font-weight: bold;
+}
+
+.rectangle-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  margin: 40px 0px 0px 0px;
+}
+
+.rectangle-link .label {
+  font-size: 14px;
+  color: #808080;
+  margin: 0px 5px 0px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rectangle-link .sign-up-link {
+  font-size: 14px;
+  color: #535bfe;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+input {
+  border: none;
+  width: 100%;
+  font-size: 12px;
+  color: #c5c5c5;
+  font-family: 'Roboto', sans-serif;
+}
+
+output {
+  width: 100%;
+  height: 100%;
+}
+
+input:focus {
+  color: #373737;
+}
