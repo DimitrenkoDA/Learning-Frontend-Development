@@ -1,54 +1,57 @@
-var screen = document.querySelector('output')
-var nodes = document.querySelectorAll('input');
+const URL = 'https://api.app.spectoos.com';
 var pad = document.querySelector('button');
-var user = { email: '0', password: '0' };
-var errorWindow = document.querySelector('.error');
+
+
 
 pad.addEventListener('click', function (event) {
-  var a = nodes[0].value;
-  var b = nodes[1].value;
-  user.email = a;
-  user.password = b;
-  console.log(user);
-  var request = fetch('https://api.app.spectoos.com/login', {
+  var nodes = document.querySelectorAll('input');
+  var user = { };
+  nodes.forEach(function(node){
+    user[node.id] = node.value;
+  });
+  console.log(user)
+  var request = fetch(`${URL}/login`, {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
   })
   .then(res => res.json())
   .then(function(json){
-    console.log(json.errors);
     Object.keys(json.errors).forEach(function(key){
+      var screen = document.querySelector('output');
+      var errorWindow = document.querySelector('.error');
       if(key == 'base'){ 
         errorWindow.classList.add('errored'); 
         return screen.value = json.errors.base;
       } 
-      var value = document.getElementById(key.toString());;
+      var val = key.toString();
+      var value = document.getElementById(`${val}-node`);
       value.classList.add('errored');
-      var text = document.getElementById(key.toString()+'-error-text');
-      return text.textContent = json.errors[key]
+      var text = document.getElementById(`${val}-error-text`);
+      text.textContent = json.errors[key];
+      return text
     });
   })
   .catch(error => console.error('Error:', error))
 }) 
 
-nodes[0].addEventListener('focus', function(event){
-  errorWindow.classList.remove('errored');
-  var email = document.getElementById('email');
-  var emailErrTxt = document.getElementById('email-error-text');
-  email.classList.remove('errored');
-  emailErrTxt.classList.remove('errored');
-});
+function clearner(){
+  var errorWindow = document.querySelector('.error');
+  document.querySelectorAll('input').forEach(function(item){
+    item.addEventListener('focus', function(event){
+      var val = this.closest('.textfield');
+      errorWindow.classList.remove('errored');
+      val.classList.remove('errored');
+    });
+  });
+}
 
-nodes[1].addEventListener('focus', function(event){
-  errorWindow.classList.remove('errored');
-  var password = document.getElementById('password');
-  var passwordErrTxt = document.getElementById('password-error-text');
-  password.classList.remove('errored');
-  passwordErrTxt.classList.remove('errored');
-});
+clearner();
+
+
 
 
 
